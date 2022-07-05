@@ -16,28 +16,30 @@ class _MapsPageState extends State<MapsPage> {
     return Scaffold(
       body: Center(
         child: SizedBox(
-          height: 150,
+          height: 150,        
           child: Column(
             children: [
               Flexible(
                 child: Stack(
                    alignment: AlignmentDirectional.center,
                   children: [
-                    FlutterMap(
-                    options: MapOptions(
-                      
-                      center: LatLng(-26.7731843, -53.2030883),
-                    ),
-                    layers: [
-                      TileLayerOptions(
-                        urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                        subdomains: ['a', 'b', 'c'],
-                        ),
-                      ],
+                    Card(
+                      elevation: 5,
+                      child: FlutterMap(
+                      options: MapOptions(                      
+                        center: LatLng(-26.7731843, -53.2030883),
+                      ),
+                      layers: [
+                        TileLayerOptions(
+                          urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                          subdomains: ['a', 'b', 'c'],
+                          ),
+                        ],
+                      ),
                     ),
                     Positioned(
                       top: 2, 
-                      right: 280,
+                      right: MediaQuery.of(context).size.width * 0.9,
                       child: ElevatedButton.icon(onPressed: (){}, icon: const Icon(Icons.near_me), label: const Text("Itinerários"))
                     ),
                   ]
