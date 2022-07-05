@@ -39,7 +39,7 @@ class _MapsPageState extends State<MapsPage> {
                     ),
                     Positioned(
                       top: 2, 
-                      right: MediaQuery.of(context).size.width * 0.9,
+                      right: MediaQuery.of(context).size.width * 0.65,
                       child: ElevatedButton.icon(onPressed: (){}, icon: const Icon(Icons.near_me), label: const Text("Itinerários"))
                     ),
                   ]
